@@ -4,10 +4,9 @@
 <p><?php echo $this->Html->link('Add Newsitem', array('action' => 'add')); ?></p>
 <table>
     <tr>
-        <th>Id</th>
         <th>Title</th>
+        <th>Published</th>
         <th>Actions</th>
-        <th>Created</th>
     </tr>
 
 <!-- Here's where we loop through our $posts array, printing out post info -->
@@ -16,7 +15,6 @@
     if($news['Newsitem']['embargo_date'] <= date('Y-m-d')){
         ?>
     <tr>
-        <td><?php echo $news['Newsitem']['id']; ?></td>
         <td>
             <?php
                 echo $this->Html->link(
@@ -25,6 +23,7 @@
                 );
             ?>
         </td>
+        <td><?php echo $news['Newsitem']['publish_date']; ?></td>
         <td>
             <?php
                 echo $this->Form->postLink(
@@ -37,11 +36,6 @@
                 echo $this->Html->link(
                     'Edit', array('action' => 'edit', $news['Newsitem']['id'])
                 );
-            ?>
-        </td>
-        <td>
-            <?php 
-                echo $news['Newsitem']['created'];
             ?>
         </td>
     </tr>
