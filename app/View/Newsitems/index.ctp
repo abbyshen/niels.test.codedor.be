@@ -12,7 +12,9 @@
 
 <!-- Here's where we loop through our $posts array, printing out post info -->
 
-    <?php foreach ($newsitems as $news): ?>
+    <?php foreach ($newsitems as $news): 
+    if($news['Newsitem']['embargo_date'] <= $news['Newsitem']['publish_date']){
+        ?>
     <tr>
         <td><?php echo $news['Newsitem']['id']; ?></td>
         <td>
@@ -43,5 +45,6 @@
             ?>
         </td>
     </tr>
+    <?php }?>
     <?php endforeach; ?>
 </table>
