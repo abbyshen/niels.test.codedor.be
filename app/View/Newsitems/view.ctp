@@ -1,7 +1,7 @@
 <!-- File: /app/View/Posts/view.ctp -->
 
-<h1><?php echo h($news['Newsitem']['title']); ?></h1>
+<h1><?php echo h($newsitem['Newsitem']['title']); ?></h1>
 
-<p><small>Created: <?php echo $news['Newsitem']['created']; ?></small></p>
+<p><small>Created: <?php echo $newsitem['Newsitem']['created']; ?></small></p>
 
-<p><?php echo h($news['Newsitem']['body']); ?></p>
+<p><?php echo h($newsitem['Newsitem']['body']); ?></p>
