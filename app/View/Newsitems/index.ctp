@@ -1,7 +1,4 @@
 <!-- File: /app/View/Posts/index.ctp -->
-
-<h1>test: newsitems</h1>
-<p><?php echo $this->Html->link('Add Newsitem', array('action' => 'add')); ?></p>
 <table>
     <tr>
         <th>Title</th>

@@ -26,7 +26,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('cake.generic_edited');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -41,12 +41,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div id="header">
 			<h1><?php echo $this->fetch('title'); ?></h1>
 		</div>
-		<div id="content">
+		<div id="layout">
+                    <div id="menu">
+                            <?php echo $this->element('menu'); ?>
+                    </div>
+                    <div id="content">
 
-			<?php echo $this->Flash->render(); ?>
+                            <?php echo $this->Flash->render(); ?>
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
+                            <?php echo $this->fetch('content'); ?>
+                    </div>
+                </div>
 		<div id="footer">
 			
 			<p>

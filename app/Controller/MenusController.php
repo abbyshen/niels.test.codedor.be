@@ -6,7 +6,11 @@ class MenusController extends AppController {
     public $controllers = array('Flash');
 
     public function index() {
-         $this->set('menus', $this->Menu->find('all'));
+        $menus = $this->paginate();
+        if ($this->request->is('requested')) {
+            return $menus;
+        }
+        $this->set('menus', $menus);
     }
 
     public function view($id = null) {
